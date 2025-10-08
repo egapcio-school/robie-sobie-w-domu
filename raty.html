@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Kursy komputerowe</title>
+    <script>
+        function funkcja()
+        {
+            var jeden=document.getElementById("uno");
+            var dwa=document.getElementById("dos");
+            var dlugosc=document.getElementById("ile").value;
+            if(dlugosc<=0){document.getElementById("wynik").innerHTML="Błędna liczba rat"}
+            else
+            {
+                var gdzie=document.getElementById("where").value;
+
+                if(jeden.checked && dwa.checked){
+                    var cena=8000/dlugosc;
+                    var ile=8000;
+                    document.getElementById("wynik").innerHTML="Kurs odbędzie się w "+gdzie+". Koszt całkowity: "+ile+" zł. Płacisz "+dlugosc+" rat po "+cena+" zł"
+                }
+                else if(jeden.checked){
+                    var cena=5000/dlugosc;
+                    var ile=5000;
+                    document.getElementById("wynik").innerHTML="Kurs odbędzie się w "+gdzie+". Koszt całkowity: "+ile+" zł. Płacisz "+dlugosc+" rat po "+cena+" zł"
+                }
+                else if(dwa.checked){
+                    var cena=3000/dlugosc;
+                    var ile=3000;
+                    document.getElementById("wynik").innerHTML="Kurs odbędzie się w "+gdzie+". Koszt całkowity: "+ile+" zł. Płacisz "+dlugosc+" rat po "+cena+" zł"
+                }
+                
+                else{document.getElementById("wynik").innerHTML="Nie zaznaczono kursu"}
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="baner.png" alt="kursy komputerowe">
+    </header>
+    <menu>
+        <a href="index.html">Strona główna</a>
+        <a href="raty.html">Koszt rat</a>
+        <a href="https://moje-szkolenia.pl/">Nasz partner</a>
+    </menu>
+    <main>
+        <p class="kontrolki">    
+            <h3>Oblicz miesięczną ratę</h3>
+            <p class="kontrolki">
+            <input type="checkbox" id="uno">Kurs React.js<br>
+            <input type="checkbox" id="dos">Kurs JavaScript<br>
+            Liczba rat: <input type="number" id="ile"><br>
+            <select id="where">
+                <option value="Katowice">Katowice</option>
+                <option value="Warszawa">Warszawa</option>
+                <option value="Gdańsk">Gdańsk</option>
+            </select>
+        </p>
+        <button onclick="funkcja()">Oblicz</button>
+        <p id="wynik"></p>
+    </main>
+    <footer>
+        <p>Autor strony: Gabriel Gil 3M</p>
+    </footer>
+</body>
+</html>
